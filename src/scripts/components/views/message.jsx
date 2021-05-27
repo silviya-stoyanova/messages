@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatDate } from '../../utils/date-utils';
 
 const Message = ({
     question_id,
@@ -13,20 +14,18 @@ const Message = ({
     id,
     className,
 }) => {
-    const lowRatingClassName = 'message-low-rating';
-    const highRatingClassName = 'message-high-rating';
-
     const hasLowRating = score <= 5;
-    const hasHighRating = score > 5;
 
     const messageClassName = `message ${className}`;
-    const subjectClassName = `message-subject ${hasLowRating && lowRatingClassName} ${hasHighRating && highRatingClassName}`;
+    const subjectClassName = `message-subject ${hasLowRating ? 'message-low-rating' : 'message-high-rating'}`;
+
+    const dateFormatted = formatDate(created_at);
 
     return (
         <article className={messageClassName}>
-            <p className={subjectClassName}>
+            <h2 className={subjectClassName}>
                 {subject}
-            </p>
+            </h2>
             <p className="message-question">
                 {question}
             </p>
@@ -36,9 +35,9 @@ const Message = ({
             <p className="message-team">
                 {team}
             </p>
-            <p className="message-date">
-                {created_at}
-            </p>
+            <span className="message-date">
+                {dateFormatted}
+            </span>
         </article>
     );
 };
