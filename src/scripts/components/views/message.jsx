@@ -3,6 +3,11 @@ import '../../../styles/components/views/message.scss';
 import React from 'react';
 import { formatDate } from '../../utils/date-utils';
 
+const getSubjectClassNameByRating = (rating) => {
+    const hasLowRating = rating <= 5;
+    return hasLowRating ? 'message-subject-low-rating' : 'message-subject-high-rating'
+}
+
 const Message = ({
     question_id,
     subject_id,
@@ -16,10 +21,8 @@ const Message = ({
     id,
     className,
 }) => {
-    const hasLowRating = score <= 5;
-
     const messageClassName = `message ${className}`;
-    const subjectClassName = `message-subject ${hasLowRating ? 'message-low-rating' : 'message-high-rating'}`;
+    const subjectClassName = `message-subject ${getSubjectClassNameByRating(score)}`;
 
     const dateFormatted = formatDate(created_at);
 

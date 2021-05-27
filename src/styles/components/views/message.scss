@@ -35,17 +35,17 @@
     &-expanded {
     }
 
-    &-low-rating {
-        color: $yellow-500;
-    }
-
-    &-high-rating {
-        color: $purple-500;
-    }
-
     &-subject {
         font-size: 20px;
         font-weight: 600;
+
+        &-low-rating {
+            color: $yellow-500;
+        }
+
+        &-high-rating {
+            color: $purple-500;
+        }
     }
 
     &-question {
