@@ -20,19 +20,23 @@
     }
 
     &:first-child {
-        z-index: 99;
+        z-index: 3;
     }
 
     &-collapsed {
-        &:not(:first-child) {
+        &:nth-child(n + 2) {
             position: absolute;
             left: 10px;
             top: 10px;
             width: 100%;
+            z-index: 2;
         }
-    }
-
-    &-expanded {
+        
+        &:nth-child(n + 3) {
+            left: 20px;
+            top: 20px;
+            z-index: 1;
+        }
     }
 
     &-subject {
