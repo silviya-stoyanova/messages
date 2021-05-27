@@ -1,3 +1,5 @@
+import '../../../styles/components/views/message.scss';
+
 import React from 'react';
 import { formatDate } from '../../utils/date-utils';
 

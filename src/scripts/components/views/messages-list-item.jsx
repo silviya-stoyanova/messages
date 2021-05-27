@@ -1,3 +1,5 @@
+import '../../../styles/components/views/messages-list-item.scss';
+
 import React, { useState } from 'react';
 import Message from './message';
 

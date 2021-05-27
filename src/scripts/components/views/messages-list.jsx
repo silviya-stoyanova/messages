@@ -1,3 +1,5 @@
+import '../../../styles/components/views/messages-list.scss';
+
 import React from 'react';
 import MessagesListItem from './messages-list-item';
 

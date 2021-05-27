@@ -1,0 +1,25 @@
+@import "../../base/tools/colors.scss";
+
+.messages-list-item {
+    display: grid;
+    grid-gap: 30px;
+    position: relative;
+
+    &-collapsed {
+        &:after {
+            background: black;
+            content: #{attr(data-count)} " messages";
+            color: white;
+            padding: 4px 60px;
+            border-radius: 8px;
+            font-size: 14px;
+            position: absolute;
+            top: -10px;
+            right: 25px;
+            z-index: 100;
+        }
+    }
+
+    &-expanded {
+    }
+}
