@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+@mixin for-phone-up {
+    @media (min-width: $min-phone-width) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (min-width: $min-tablet-portrait-width) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (min-width: $min-tablet-landscape-width) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: $min-desktop-width) {
+        @content;
+    }
+}
