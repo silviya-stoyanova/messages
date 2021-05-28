@@ -1,0 +1,9 @@
+@import "../../base/tools/colors.scss";
+@import "../../base/tools/breakpoints.scss";
+
+.messages-page {
+    width: 100vw;
+    height: 100%;
+    color: $grey-500;
+    background: $grey-100;
+}

@@ -1,0 +1,80 @@
+@import "../../base/tools/colors.scss";
+@import "../../base/tools/breakpoints.scss";
+
+.message {
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: 2fr 1fr;
+    gap: 4px;
+    grid-auto-flow: column;
+    padding: 30px;
+    background: $white-color;
+    border-radius: 10px;
+    box-shadow: 4px 6px 5px 0px #cfcccc40;
+    position: relative;
+
+    @include for-phone-up {
+        grid-template-rows: repeat(3, min-content);
+        grid-template-columns: 4fr max-content;
+        gap: 15px;
+    }
+
+    &:first-child {
+        z-index: 3;
+    }
+
+    &-collapsed {
+        &:nth-child(n + 2) {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 100%;
+            z-index: 2;
+        }
+        
+        &:nth-child(n + 3) {
+            left: 20px;
+            top: 20px;
+            z-index: 1;
+        }
+    }
+
+    &-subject {
+        font-size: 20px;
+        font-weight: 600;
+
+        &-low-rating {
+            color: $yellow-500;
+        }
+
+        &-high-rating {
+            color: $purple-500;
+        }
+    }
+
+    &-question {
+        font-size: 16px;
+    }
+
+    &-text {
+        font-size: 20px;
+        font-weight: 600;
+        padding-top: 10px;
+    }
+
+    &-team {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: right;
+        grid-row: 1 / span 2;
+
+        @include for-phone-up {
+            grid-row: auto;
+        }
+    }
+
+    &-date {
+        font-size: 16px;
+        text-align: right;
+    }
+}

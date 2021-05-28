@@ -1,0 +1,7 @@
+@import './variables.scss';
+
+@font-face {
+    font-family: $primary-font;
+    src: url('../../../assets/fonts/Comfortaa-Regular.woff2') format('woff2');
+    font-display: swap;
+}
