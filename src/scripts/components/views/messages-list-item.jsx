@@ -15,8 +15,13 @@ const MessagesListItem = ({ thread }) => {
         setIsExpanded(true);
     }
 
+    const [firstMessage] = thread;
+    const { score: firstMessageScore } = firstMessage;
+    const hasFirstMessageLowRating = firstMessageScore <= 5;
+
     const listItemClassName = `
         messages-list-item 
+        ${hasFirstMessageLowRating ? 'messages-list-item-low-rating' : 'messages-list-item-high-rating' }
         ${!hasOneMessage ? (isExpanded ? 'messages-list-item-expanded' : 'messages-list-item-collapsed') : ''}`
 
 

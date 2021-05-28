@@ -5,9 +5,20 @@
     grid-gap: 30px;
     position: relative;
 
+    &-low-rating {
+        &:after {
+            background: $yellow-500;
+        }
+    }
+
+    &-high-rating {
+        &:after {
+            background: $green-500;
+        }
+    }
+
     &-collapsed {
         &:after {
-            background: black;
             content: #{attr(data-count)} " messages";
             color: white;
             padding: 4px 60px;
