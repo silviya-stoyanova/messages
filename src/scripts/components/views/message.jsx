@@ -9,16 +9,12 @@ const getSubjectClassNameByRating = (rating) => {
 }
 
 const Message = ({
-    question_id,
-    subject_id,
-    thread_id,
     score,
     text,
     created_at,
     subject,
     question,
     team,
-    id,
     className,
 }) => {
     const messageClassName = `message ${className}`;
